@@ -29,7 +29,7 @@ function loadCSV(url, callback) {
           Object.entries(row).map(([k, v]) => [k.trim(), v.trim()])
         )
       );
-
+      console.log(data);
       callback(data);
     },
     error: function(err) {
@@ -49,7 +49,6 @@ function sort_data (data) {
     dept.total_points = total_points;
   })
   data.sort((a,b)=>b.total_points - a.total_points);
-  console.log(data);
   displayRows(data);
 }
 
@@ -117,4 +116,5 @@ function displayRows(data){
     index++;
   });
 }
+
 
